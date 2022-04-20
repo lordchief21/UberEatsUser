@@ -7,20 +7,39 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 const RestaurantItem = ({restaurant}) => {
   return(
-    <View style={styles.restaurantContainer}>
-        
+      
+      <View style={styles.restaurantContainer}>
+          
         <Image 
           source=
-          {{uri: restaurant.image,
-        }}
+            {{uri: restaurant.image,}}
           style = {styles.image}
+        
         />
-        <Text style={styles.title}>{restaurant.name}</Text>
+        
 
-        {/* Llamamos los values con sus respectivos keys....... El &#8226; es para el punto en el medio*/}
-        <Text style={styles.subtitle}>$ {restaurant.deliveryFee} &#8226; {restaurant.minDeliveryTime}-{restaurant.maxDeliveryTime} minutes </Text> 
-   
-    </View>
+        <View style={styles.row}>
+          
+          <View>
+            <Text style={styles.title}>
+              {restaurant.name}
+            </Text>
+
+            {/* Llamamos los values con sus respectivos keys....... El &#8226; es para el punto en el medio*/}
+          
+            <Text style={styles.subtitle}>
+              $ {restaurant.deliveryFee} &#8226; {restaurant.minDeliveryTime}-{restaurant.maxDeliveryTime} minutes 
+            </Text> 
+          </View>
+
+          <View style={styles.rating}>
+              <Text style={styles.numberRate}>{restaurant.rating}</Text>
+          </View>
+        
+        </View>
+      
+      </View>
+    
   )
 };
 
@@ -55,5 +74,27 @@ const styles = StyleSheet.create({
       color: "grey",
       marginBottom: 10,
     },
+
+    row: {
+      flexDirection:"row",
+      alignItems: "center",
+      
+    },
+
+    rating:{
+      marginLeft: "auto",
+      backgroundColor:"lightgrey",
+      borderRadius: 10,
+      width: 30,
+      height: 30,
+      alignItems: "center",
+      padding:5,
+      
+    },
+
+    
+
+
+
   
   });

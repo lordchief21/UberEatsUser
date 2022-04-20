@@ -25,20 +25,19 @@ export default function App() {
 
 
 
-
-
-
       {/* Uso del FLatList */}
 
         {/* FlatList es un componente específico de Reac Native que permite generar un "Loop" por todo el array de restaurants... OJO: MUCHO CUIDADO CON LOS CIERRES DE "[],{},(),/>" */}
 
         <FlatList 
+          
           data={restaurants} 
           renderItem ={({ item }) => <RestaurantItem restaurant={item}/>} /> 
 
 
 
       <StatusBar style="auto" />
+
     </View>
   );
 }
