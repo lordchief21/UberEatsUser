@@ -1,8 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image,FlatList } from 'react-native';
-import RestaurantItem from './src/components/RestaurantItem/Index';
-import  restaurants from "./assets/data/restaurants.json";
+import { StyleSheet,  View,  } from 'react-native';
 
+import HomeScreen from './src/screens/HomeScreen';
 
 
 
@@ -16,23 +15,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       
-      {/*Restaurant Item */}
-      {/* .......... Con lo contenido adentro de la etiqueta llamamos cada objeto del array... Usamos [] */}
-        
-        
-        {/* <RestaurantItem restaurant={restaurants[0]} />           
-            <RestaurantItem restaurant={restaurants[1]}/> */}
-
-
-
-      {/* Uso del FLatList */}
-
-        {/* FlatList es un componente específico de Reac Native que permite generar un "Loop" por todo el array de restaurants... OJO: MUCHO CUIDADO CON LOS CIERRES DE "[],{},(),/>" */}
-
-        <FlatList 
-          
-          data={restaurants} 
-          renderItem ={({ item }) => <RestaurantItem restaurant={item}/>} /> 
+      <HomeScreen />
 
 
 
